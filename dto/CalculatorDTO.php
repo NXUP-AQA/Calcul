@@ -12,10 +12,10 @@ class CalculatorDTO
     public int $total;
     public string $logs;
 
-    public function __construct()
+    public function __construct(?string $customSeparator = null)
     {
         $this->arg1 = null;
         $this->arg2 = null;
-        $this->separator = (php_sapi_name() === 'cli') ? "\n" : "<br>";
+        $this->separator = $customSeparator;
     }
 }
