@@ -1,6 +1,6 @@
 <?php
 
-namespace liw\interface;
+namespace liw\interfaces;
 use liw\dto\CalculatorDTO;
 
 interface HandlerInterface {

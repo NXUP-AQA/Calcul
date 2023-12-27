@@ -3,7 +3,7 @@
 namespace liw\controllers;
 
 use liw\dto\CalculatorDTO;
-use liw\interface\CalculateHandler;
+use liw\interfaces\CalculateHandler;
 
 
 class CalculateControllers

@@ -2,7 +2,7 @@
 
 
 use liw\dto\CalculatorDTO;
-use liw\interface\CalculateHandler;
+use liw\interfaces\CalculateHandler;
 
 require_once __DIR__ . "/vendor/autoload.php";
 
