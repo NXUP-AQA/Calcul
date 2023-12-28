@@ -11,7 +11,7 @@ class MultiplicationStrategy implements CalculateStrategy
         if ($data->total > 10 && in_array("умножение", $data->action, true) === false) {
             $data->operation++;
             $result = $data->total;
-            $data->total = $data->arg1 * $data->arg2;
+            $data->total = $data->argOne * $data->argTwoo;
             $data->logs .= "Текущий результат " . $result . " $data->separator" . "Выполнено действие: умножение Результат: " . $data->total . " $data->separator";
         }
         $data->action[] = "умножение";

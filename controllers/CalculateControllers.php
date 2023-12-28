@@ -3,14 +3,13 @@
 namespace liw\controllers;
 
 use liw\dto\CalculatorDTO;
-use liw\interfaces\CalculateHandler;
-
+use liw\CalculateHandler;
 
 class CalculateControllers
 {
-    public function web($arg1 = null, $arg2 = null, $separator = "<br>")
+    public function web($argOne = null, $argTwoo = null, $separator = "<br>")
     {
-        $data = new CalculatorDTO($arg1, $arg2, $separator);
+        $data = new CalculatorDTO($argOne, $argTwoo, $separator);
         $hand = new CalculateHandler();
         $hand->handle($data);
         return $data;

@@ -3,8 +3,8 @@
 namespace liw\dto;
 class CalculatorDTO
 {
-    public ?int $arg1;
-    public ?int $arg2;
+    public ?int $argOne;
+    public ?int $argTwoo;
     public ?string $separator;
     public int $iteration = 0;
     public array $action;
@@ -14,8 +14,8 @@ class CalculatorDTO
 
     public function __construct(?string $customSeparator = null)
     {
-        $this->arg1 = null;
-        $this->arg2 = null;
+        $this->argOne = null;
+        $this->argTwoo = null;
         $this->separator = $customSeparator;
     }
 }

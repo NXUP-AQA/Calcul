@@ -1,6 +1,7 @@
 <?php
 
-namespace liw\interfaces;
+namespace liw;
+use liw\interfaces\HandlerInterface;
 use liw\dto\CalculatorDTO;
 use liw\strategies\AdditionStrategy;
 use liw\strategies\DivisionStrategy;
@@ -42,8 +43,8 @@ class CalculateHandler implements HandlerInterface
     }
     private function resetContext(CalculatorDTO $data): void
     {
-        $data->arg1 = $data->arg1 ?? rand(1, 2000);
-        $data->arg2 = $data->arg2 ?? rand(1, 2000);
+        $data->argOne = $data->argOne ?? rand(1, 2000);
+        $data->argTwoo = $data->argTwoo ?? rand(1, 2000);
         $data->operation = 0;
         $data->total = 0;
         $data->iteration++;
@@ -88,8 +89,8 @@ class CalculateHandler implements HandlerInterface
         $outputMode = php_sapi_name() === 'cli' ? 'cli' : 'web';
 
         echo $outputFunctions[$outputMode]['success']();
-        echo "Число 1 - {$data->arg1}{$data->separator}";
-        echo "Число 2 - {$data->arg2}{$data->separator}";
+        echo "Число 1 - {$data->argOne}{$data->separator}";
+        echo "Число 2 - {$data->argTwoo}{$data->separator}";
         echo $outputFunctions[$outputMode]['action']();
         echo $outputFunctions[$outputMode]['action_items']();
         echo $outputFunctions[$outputMode]['iteration']();
@@ -97,6 +98,6 @@ class CalculateHandler implements HandlerInterface
         echo $outputFunctions[$outputMode]['failed_actions_header']();
         echo $outputFunctions[$outputMode]['failed_actions']();
     }
-
+    
 
 }

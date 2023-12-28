@@ -11,7 +11,7 @@ class AdditionStrategy implements CalculateStrategy
         if (in_array("сложение", $data->action, true) === false) {
             $data->operation++;
             $result = $data->total;
-            $data->total = $data->arg1 + $data->arg2;
+            $data->total = $data->argOne + $data->argTwoo;
             $data->logs .= "Текущий результат " . $result . " $data->separator" . "Выполнено действие: сложение Результат: " . $data->total . " $data->separator";
         }
         $data->action[] = "сложение";

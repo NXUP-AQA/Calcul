@@ -2,7 +2,7 @@
 
 
 use liw\dto\CalculatorDTO;
-use liw\interfaces\CalculateHandler;
+use liw\CalculateHandler;
 
 require_once __DIR__ . "/vendor/autoload.php";
 
@@ -11,14 +11,14 @@ if ($argc < 3) {
 }
 
 
-$arg1 = (int)$argv[1];
-$arg2 = (int)$argv[2];
+$argOne = (int)$argv[1];
+$argTwoo = (int)$argv[2];
 
 $separator = (php_sapi_name() === 'cli') ? "\n" : "<br>";
 
 $data = new CalculatorDTO();
-$data->arg1 = $arg1;
-$data->arg2 = $arg2;
+$data->argOne = $argOne;
+$data->argTwoo = $argTwoo;
 $data->separator = $separator;
 
 $handler = new CalculateHandler();

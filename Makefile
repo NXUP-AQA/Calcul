@@ -4,6 +4,8 @@ install: docker-build up composer-install
 down: docker-down
 up: docker-up
 restart: docker-down docker-up
+ps: docker-ps
+logs: docker-logs
 
 docker-build: \
 	docker-build-php-fpm \
@@ -17,6 +19,12 @@ docker-down:
 	@echo "docker down"
 	@docker-compose down --remove-orphans
 
+docker-ps:
+	@docker-compose ps
+
+docker-logs:
+	@docker-compose logs
+	
 docker-build-php-fpm:
 	@docker build --target=fpm -t ${REGISTRY}/${PHP_FPM_CONTAINER_NAME}:${IMAGE_TAG} -f ./docker/Dockerfile .
 
